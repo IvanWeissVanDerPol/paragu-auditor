@@ -1,0 +1,31 @@
+[project]
+name = "paragu-auditor"
+version = "0.1.0"
+description = "Public procurement auditor for Paraguay DNCP data, with Cardinal-style red flags"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "pandas>=2.0",
+    "streamlit>=1.30",
+    "openai>=1.30",
+    "duckdb>=0.10",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
