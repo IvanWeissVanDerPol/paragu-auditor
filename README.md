@@ -15,23 +15,27 @@ ProZorro (Ukraine's procurement transparency system) saved the Ukrainian governm
 
 ## Status
 
-**MVP** (focused build, ~15-20 hours):
-- [x] Project scaffold
-- [ ] Paraguay OCDS Silver layer (with JSON-LD mapper)
-- [ ] R018 (single-bidder) red flag + tests
-- [ ] R003 (short submission period) red flag + tests
-- [ ] Chat agent (function-calling, Spanish system prompt)
-- [ ] Streamlit UI (chat + red flags dashboard)
-- [ ] Documentation
+**Complete MVP** (3,171 lines, 96 tests, all passing):
+- [x] Paraguay OCDS Silver layer (JSON-LD → OCDS mapper)
+- [x] R018 (single-bidder) — TDD + Cardinal parity
+- [x] R003 (short submission period) — TDD + Cardinal parity
+- [x] R024 (price close to winning) — TDD
+- [x] R028 (identical bid prices) — TDD
+- [x] R058 (heavily discounted bid) — TDD + IQR-based outlier detection
+- [x] FlagRunner orchestrator
+- [x] DuckDB storage layer (persistent, SQL-queryable)
+- [x] Chat agent (rule-based + OpenAI function-calling modes)
+- [x] Spanish system prompt with citation rules
+- [x] Streamlit UI (chat + red flags dashboard)
+- [x] GitHub repo, MIT license, architecture docs
 
-**Out of scope for MVP** (defer to v2):
-- R024, R028, R058 (3 more red flags)
+**In scope for v2**:
 - MCP server backend
 - Multi-country demo (Mexico, Brazil, etc.)
-- Databricks Apps deployment
-- Lakehouse + Lakebase
+- Databricks Apps deployment (Lakebase + Agent Bricks)
 - WhatsApp integration
 - Guaraní full NLP
+- Real DNCP data ingestion (currently using synthetic demo data)
 
 ## Architecture
 
